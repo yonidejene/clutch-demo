@@ -1,0 +1,1 @@
+import { View } from "react-native"; import { Text } from "../../src/components/Text"; export default function FeedScreen() { return <View className="flex-1 items-center justify-center"><Text>Feed coming soon</Text></View>; }

@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@import 'uniwind';
+@import 'heroui-native/styles';
+@source './node_modules/heroui-native/lib';
+
+/* ── App theme tokens ──────────────────────────────────────────────
+   Dark-green brand theme. Only overrides brand-specific tokens;
+   HeroUI's built-in dark theme handles fields, surfaces, etc.
+   App is forced to dark mode via app.json userInterfaceStyle.      */
+
+@layer theme {
+  :root {
+    @variant light {
+      /* Brand overrides (fallback if system is light) */
+      --background: #03160A;
+      --foreground: #FFFFFF;
+      --surface: #0A2515;
+      --surface-foreground: #FFFFFF;
+      --surface-secondary: #0D2E1A;
+      --surface-secondary-foreground: #FFFFFF;
+      --overlay: #0A2515;
+      --overlay-foreground: #FFFFFF;
+      --muted: #B0BFB7;
+      --default: #0D2E1A;
+      --default-foreground: #B0BFB7;
+      --accent: #1ED762;
+      --accent-foreground: #010904;
+      --accent-muted: #15A04A;
+      --border: rgba(255, 255, 255, 0.1);
+      --separator: rgba(255, 255, 255, 0.1);
+      --field-placeholder: #71717A;
+      --focus: var(--accent);
+      --link: var(--accent);
+    }
+
+    @variant dark {
+      /* Brand — dark green background + bright green accent */
+      --background: #03160A;
+      --foreground: #FFFFFF;
+      --surface: #0A2515;
+      --surface-foreground: #FFFFFF;
+      --surface-secondary: #0D2E1A;
+      --surface-secondary-foreground: #FFFFFF;
+      --overlay: #0A2515;
+      --overlay-foreground: #FFFFFF;
+      --muted: #B0BFB7;
+      --default: #0D2E1A;
+      --default-foreground: #B0BFB7;
+      --accent: #1ED762;
+      --accent-foreground: #010904;
+      --accent-muted: #15A04A;
+      --border: rgba(255, 255, 255, 0.1);
+      --separator: rgba(255, 255, 255, 0.1);
+      --field-placeholder: #71717A;
+      --focus: var(--accent);
+      --link: var(--accent);
+    }
+  }
+}
+
+@theme {
+  --font-regular: 'MonaSans-Regular';
+  --font-heading: 'MonaSansExpanded-Bold';
+}

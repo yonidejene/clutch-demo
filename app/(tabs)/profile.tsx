@@ -1,0 +1,1 @@
+import { View } from "react-native"; import { Text } from "../../src/components/Text"; export default function ProfileScreen() { return <View className="flex-1 items-center justify-center"><Text>Profile coming soon</Text></View>; }
