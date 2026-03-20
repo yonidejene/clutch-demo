@@ -36,7 +36,7 @@ function AppStack() {
         <Stack.Screen name="(tabs)" />
         <Stack.Screen
           name="match/[id]"
-          options={{ headerShown: true, title: 'Match', headerBackTitle: 'Back', headerStyle: { backgroundColor: background }, headerTintColor: accent, headerTitleStyle: { color: foreground }, headerShadowVisible: false }}
+          options={{ headerShown: true, title: '', headerBackTitle: 'Back', headerStyle: { backgroundColor: background }, headerTintColor: accent, headerTitleStyle: { color: foreground }, headerShadowVisible: false }}
         />
         <Stack.Screen
           name="comments/[videoId]"
