@@ -172,6 +172,7 @@ export function VideoPlayer({
             </Text>
             <Pressable
               className="mt-3 rounded-full px-4 py-2"
+              hitSlop={8}
               onPress={handleRetry}
               style={{ backgroundColor: OVERLAY.highlight }}
             >

@@ -10,7 +10,7 @@ import {
 import { useLocalSearchParams } from "expo-router";
 import { VideoView } from "expo-video";
 import { Ionicons } from "@expo/vector-icons";
-import { Separator, Spinner, useThemeColor } from "heroui-native";
+import { Spinner, useThemeColor } from "heroui-native";
 import { CommentInput } from "../../src/components/CommentInput";
 import { CommentItem } from "../../src/components/CommentItem";
 import { Text } from "../../src/components/Text";
@@ -80,7 +80,6 @@ function MatchScreenContent({ videoId }: { videoId: number }) {
           <View className="gap-3">
             <VenueAndSocial venue={venue} videoId={videoId} />
             <MatchVideo matchUrl={matchUrl} posterUrl={posterUrl} />
-            <Separator />
             <CommentList videoId={videoId} />
           </View>
         </ScrollView>
@@ -162,6 +161,7 @@ function MatchVideo({
             </Text>
             <Pressable
               className="mt-3 rounded-full px-4 py-2"
+              hitSlop={8}
               onPress={handleRetry}
               style={{ backgroundColor: OVERLAY.highlight }}
             >
@@ -200,7 +200,7 @@ function VenueAndSocial({
         </Text>
       </View>
       <View className="flex-row items-center gap-3">
-        <Pressable className="flex-row items-center py-2.5 pr-2" onPress={toggleLike}>
+        <Pressable className="flex-row items-center" hitSlop={8} onPress={toggleLike}>
           <Ionicons
             name={hasLiked ? "heart" : "heart-outline"}
             size={20}

@@ -139,7 +139,7 @@ function VideoCardInner({
       <View className="px-1 mb-2">
         <Text
           variant="heading"
-          style={{ fontSize: 18 }}
+          style={{ fontSize: 18, lineHeight: 22 }}
           className="text-foreground"
         >
           {venue.name}
@@ -151,6 +151,7 @@ function VideoCardInner({
           <Pressable
             onPress={() => onExpand(item)}
             className="flex-row items-baseline gap-0.5"
+            hitSlop={10}
           >
             <Text
               style={{ fontSize: 14, fontWeight: "600", color: accentColor }}
@@ -235,7 +236,8 @@ function VideoCardInner({
 
           {isActive && (
             <Pressable
-              className="absolute top-3 right-3 w-10 h-10 rounded-full items-center justify-center"
+              className="absolute top-3 right-3 w-11 h-11 rounded-full items-center justify-center"
+              hitSlop={8}
               onPress={onMuteToggle}
               style={{ backgroundColor: OVERLAY.bg }}
             >
@@ -265,6 +267,7 @@ function VideoCardInner({
             >
               <Pressable
                 className="px-2.5 py-1.5"
+                hitSlop={4}
                 onPress={isLandscape ? handleToggleVariant : undefined}
                 style={
                   !isLandscape
@@ -280,6 +283,7 @@ function VideoCardInner({
               </Pressable>
               <Pressable
                 className="px-2.5 py-1.5"
+                hitSlop={4}
                 onPress={!isLandscape ? handleToggleVariant : undefined}
                 style={
                   isLandscape
@@ -299,7 +303,7 @@ function VideoCardInner({
       </Pressable>
 
       <View className="flex-row items-center mt-2 px-1">
-        <Pressable className="flex-row items-center" onPress={handleToggleLike}>
+        <Pressable className="flex-row items-center" hitSlop={{ top: 8, bottom: 8, left: 8, right: 4 }} onPress={handleToggleLike}>
           <Ionicons
             name={hasLiked ? "heart" : "heart-outline"}
             size={22}
@@ -319,6 +323,7 @@ function VideoCardInner({
         </Pressable>
         <Pressable
           onPress={() => onCommentPress(item.id)}
+          hitSlop={{ top: 8, bottom: 8, left: 4, right: 8 }}
           className="flex-row items-center ml-4"
         >
           <Ionicons name="chatbubble-outline" size={20} color={accentColor} />
